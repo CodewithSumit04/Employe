@@ -77,6 +77,32 @@
                 <button type="submit" class="btn save-btn" id="submit-btn" onclick="update()">Update Employee</button>
             </form>
         </div>
+
+        <div class="form-section" id="attendence-form" style="display: none;">
+            <h2 id="form-title">ADD ATTENDANCE</h2>
+            <form id="empForm">
+                <div class="input-group">
+                    <label>ATTENDENCE EMPLOYE NAME </label>
+                    <input type="name" id="Em_name" required>
+                    <br><br>
+                    <label>Update Joining Date</label>
+                    <input type="date" id="Em_Date" required>
+                    <input type="hidden" id="attendence_email" placeholder="john@company.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Attendance Status</label>
+                    <select id="UStatus">
+                        <option value="">-- Select Status --</option>
+                        <option value="P">Present</option>
+                        <option value="A">Absent</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn save-btn" id="submit-btn" onclick="attendence_data(event)">ADD
+                    ATTENDENCE</button>
+            </form>
+        </div>
+
+
         <div class="table-section">
             <h2>Employee Management List</h2>
             <table id="empTable">
@@ -94,6 +120,20 @@
             </table>
         </div>
     </div>
+    <div class="table-section" style="margin-top: 20px;">
+    <h2>Attendance Records</h2>
+    <table id="attendanceTable">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="attendanceTableBody">
+            </tbody>
+    </table>
+</div>
 
 
     <script src="./script.js">
